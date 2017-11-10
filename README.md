@@ -7,3 +7,8 @@ https://developer.android.com/guide/topics/sensors/sensors_motion.html#sensors-r
 
 compute orientation (with geomagnetic sensor, see src code from Android):
 https://developer.android.com/guide/topics/sensors/sensors_position.html
+
+
+Problems:
+v & d grow due to accel. offset.
+time offset (might millis->micros)?
