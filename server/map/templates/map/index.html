@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html>
+    {% load static %}
+    
+<!--<link rel="stylesheet" type="text/css" href="{% static 'map/style.css' %}" />-->
+<title>Indoor Navi</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+<body>
+
+<!-- Side Navigation -->
+<nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center" style="display:none" id="mySidebar">
+  <h1 class="w3-xxxlarge w3-text-theme">Side Navigation</h1>
+  <button class="w3-bar-item w3-button" onclick="w3_close()">Close <i class="fa fa-remove"></i></button>
+  <a href="#" class="w3-bar-item w3-button">Link 1</a>
+  <a href="#" class="w3-bar-item w3-button">Link 2</a>
+  <a href="#" class="w3-bar-item w3-button">Link 3</a>
+  <a href="#" class="w3-bar-item w3-button">Link 4</a>
+</nav>
+
+<!-- Header -->
+
+<header class="w3-container w3-theme w3-padding" id="myHeader">
+
+  <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i> 
+  <div class="w3-center">
+      
+  <h3>iNETs SMEAGOL Lab</h3>
+<!--        {% load static %}-->
+<!--  <img src="{% static "my_app/example.jpg" %}" alt="My image"/>-->
+      
+  <h1 class="w3-large w3-animate-bottom"></h1>
+    <div class="w3-padding-32">
+      <button class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey" onclick="document.getElementById('id01').style.display='block'" style="font-weight:900;">Your Institute Navigator</button>
+    </div>
+  </div>
+</header>
+    
+<!-- Modal -->
+<div id="id01" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-top">
+      <header class="w3-container w3-theme-l1"> 
+        <span onclick="document.getElementById('id01').style.display='none'"
+        class="w3-button w3-display-topright">×</span>
+        <h4>Project Info</h4>
+        <h5>Collaborators: Yuxi Sun, Michael Zentera</h5>
+      </header>
+      <div class="w3-padding">
+        <p>This is our UI served by the tiny Arduino, it help you finds your way!</p>
+        <p>Go to our <a class="w3-btn" href="https://github.com/sherylll/indoorNav"target="_blank">Github Repository</a> to learn more!</p>
+      </div>
+    </div>
+</div>
+
+<div class="w3-container">
+<div class="w3-center">
+<hr>
+  <div class="w3-dropdown-hover">
+    <button class="w3-button w3-theme">Which Room? <i class="fa fa-caret-down"></i></button>
+    <div class="w3-dropdown-content w3-bar-block w3-border">
+      <a href="#" class="w3-bar-item w3-button">Kitchen</a>
+      <a href="#" class="w3-bar-item w3-button">??</a>
+      <a href="#" class="w3-bar-item w3-button">??</a>
+    </div>
+  </div>
+    <div class="w3-dropdown-hover">
+    <button class="w3-button w3-theme">To Whom? <i class="fa fa-caret-down"></i></button>
+    <div class="w3-dropdown-content w3-bar-block w3-border">
+      <a href="#" class="w3-bar-item w3-button">Prof</a>
+      <a href="#" class="w3-bar-item w3-button">Link 2</a>
+      <a href="#" class="w3-bar-item w3-button">Link 3</a>
+    </div>
+  </div>
+  <a class="w3-button w3-theme">Go</a>
+</div>
+<br>
+</div>
+
+<div class="w3-row-padding w3-center w3-margin-top">
+<div class="w3-half">
+  <div class="w3-card w3-container" style="min-height:460px">
+      
+  <h3>Floor Plan</h3><br>
+  <p>Here the floor plan and the user's position in the building is shown.</p>
+<img src="{% static "map/testMap.png" %}" alt="My image"/>
+  </div>
+</div>
+
+<div class="w3-half">
+  <div class="w3-card w3-container" style="min-height:460px">
+  <h3>Instructions</h3><br>
+  <p>Here the instructions (direction arrows/door opener alert/...)</p>
+
+  </div>
+</div>
+
+</div>
+
+<h3 class="w3-center">Approaching destination...</h3>
+<div class="w3-container">
+<div class="w3-light-gray">
+  <div id="myBar" class="w3-center w3-padding w3-theme" style="width:5%">5%</div>
+</div><br>
+<button class="w3-btn w3-theme" onclick="move()">Click Me</button> 
+</div>
+
+<hr>
+<h2 class="w3-center">Forms and Lists</h2>
+
+<div class="w3-row-padding">
+
+<div class="w3-half">
+<form class="w3-container w3-card-4">
+  <h2>Input Form</h2>
+  <div class="w3-section">      
+    <input class="w3-input" type="text" required>
+    <label>Name</label>
+  </div>
+  <div class="w3-section">      
+    <input class="w3-input" type="text" required>
+    <label>Email</label>
+  </div>
+  <div class="w3-section">      
+    <input class="w3-input" type="text" required>
+    <label>Subject</label>
+  </div>
+
+  <div class="w3-row">
+  <div class="w3-half">
+    <input id="milk" class="w3-check" type="checkbox" checked="checked">
+    <label>Milk</label>
+    <br>
+    <input id="sugar" class="w3-check" type="checkbox">
+    <label>Sugar</label>
+    <br>
+    <input id="lemon" class="w3-check" type="checkbox" disabled>
+    <label>Lemon (Disabled)</label>
+    <br><br>
+  </div>
+
+  <div class="w3-half">
+    <input id="male" class="w3-radio" type="radio" name="gender" value="male" checked>
+    <label>Male</label>
+    <br>
+    <input id="female" class="w3-radio" type="radio" name="gender" value="female">
+    <label>Female</label>
+    <br>
+    <input id="unknown" class="w3-radio" type="radio" name="gender" value="" disabled>
+    <label> Don't know (Disabled)</label>
+  </div>
+  </div>
+</form>
+</div>
+<div class="w3-half">
+<div class="w3-card-4 w3-container">
+<h2>Lists</h2>
+<ul class="w3-ul w3-margin-bottom">
+  <li>Jill</li>
+  <li>Eve</li>
+  <li>Adam</li>
+</ul>
+<br>
+<ul class="w3-ul w3-border w3-hoverable">
+  <li class="w3-theme">Jill</li>
+  <li>Eve</li>
+  <li>Adam</li>
+  <li>Steve</li>
+</ul>
+<br>
+</div>
+</div>
+</div>
+<hr>
+
+
+
+<!-- Footer -->
+<footer class="w3-container w3-theme-dark w3-padding-16">
+  <h3>Indoor Navigator</h3>
+  <div style="position:relative;bottom:55px;" class="w3-tooltip w3-right">
+    <span class="w3-text w3-theme-light w3-padding">Go To Top</span>    
+    <a class="w3-text-white" href="#myHeader"><span class="w3-xlarge">
+        </span></a>
+  </div>
+</footer>
+
+<!-- Script for Sidebar, Tabs, Accordions, Progress bars and slideshows -->
+<script>
+// Side navigation
+function w3_open() {
+    var x = document.getElementById("mySidebar");
+    x.style.width = "100%";
+    x.style.fontSize = "40px";
+    x.style.paddingTop = "10%";
+    x.style.display = "block";
+}
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+}
+
+
+var mybtn = document.getElementsByClassName("testbtn")[0];
+mybtn.click();
+
+// Slideshows
+var slideIndex = 1;
+
+function plusDivs(n) {
+slideIndex = slideIndex + n;
+showDivs(slideIndex);
+}
+
+function showDivs(n) {
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length} ;
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+
+showDivs(1);
+
+// Progress Bars
+function move() {
+  var elem = document.getElementById("myBar");   
+  var width = 5;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width == 100) {
+      clearInterval(id);
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+      elem.innerHTML = width * 1  + '%';
+    }
+  }
+}
+</script>
+
+</body>
+</html>
