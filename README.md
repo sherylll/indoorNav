@@ -9,6 +9,9 @@ compute orientation (with geomagnetic sensor, see src code from Android):
 https://developer.android.com/guide/topics/sensors/sensors_position.html
 
 
-Problems:
+# Problems:
 v & d grow due to accel. offset.
 time offset (might millis->micros)?
+
+# Run Server:
+Go to /server, run python manage.py runserver, open browser and visit localhost:8000/map/
