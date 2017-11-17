@@ -15,3 +15,8 @@ time offset (might millis->micros)?
 
 # Run Server:
 Go to /server, run python manage.py runserver, open browser and visit localhost:8000/map/
+
+
+# Quaternion approach:
+
+https://github.com/arduino-libraries/MadgwickAHRS.git
