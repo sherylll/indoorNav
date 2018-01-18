@@ -26,3 +26,5 @@ https://github.com/kriswiner/LSM9DS1/blob/master/LSM9DS1_MS5611_BasicAHRS_t3.ino
 
 arduino:
  90:A2:DA:F7:08:4F
+ 
+192.168.1.109
